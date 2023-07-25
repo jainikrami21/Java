@@ -167,9 +167,23 @@ public class ServicemanController extends HttpServlet {
 				response.sendRedirect("serviceman-login.jsp");
 			}
 		}
-			
+		else if (action.equalsIgnoreCase("update")) {
+			ServiceMan s = new ServiceMan();
+			s.setId(Integer.parseInt(request.getParameter("id")));
+			s.setName(request.getParameter("name"));
+			s.setContact(Long.parseLong(request.getParameter("contact")));
+			s.setAddress(request.getParameter("address"));
+			s.setEmail(request.getParameter("email"));
+			ServicemanDao.updateServiceManList(s);
+			HttpSession session = request.getSession();
+			session.setAttribute("data", s);
+			request.getRequestDispatcher("admin-edit-list.jsp").forward(request, response);
 		}
 	}
+	
+			
+		}
+	
 	
 	
 

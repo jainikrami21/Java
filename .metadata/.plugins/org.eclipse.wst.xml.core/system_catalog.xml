@@ -235,4 +235,8 @@
   <system systemId="http://www.w3.org/2001/xml.xsd" uri="jar:file:/C:/Users/PARUL/eclipse/jee-2023-032/eclipse/../../../.p2/pool/plugins/org.eclipse.xsd_2.19.0.v20230211-1150.jar!/cache/www.w3.org/2001/xml.xsd"/>
   <uri name="http://www.w3.org/2001/XMLSchema" uri="jar:file:/C:/Users/PARUL/eclipse/jee-2023-032/eclipse/../../../.p2/pool/plugins/org.eclipse.xsd_2.19.0.v20230211-1150.jar!/cache/www.w3.org/2001/XMLSchema.xsd"/>
   <uri id="org.w3c.xinclude" name="http://www.w3.org/2001/XInclude" uri="jar:file:/C:/Users/PARUL/eclipse/jee-2023-032/eclipse/../../../.p2/pool/plugins/org.eclipse.wst.xsl.core_1.2.200.v202302070714.jar!/xslt-schemas/xinclude.xsd"/>
+  <public publicId="-//Hibernate/Hibernate Mapping DTD 3.0//EN" uri="file:/C:/Users/PARUL/eclipse/jee-2023-032/eclipse/../../../.p2/pool/plugins/org.hibernate.eclipse.mapper_5.4.20.v20230103-1002/dtd/hibernate-mapping-3.0.dtd" webURL="http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"/>
+  <public publicId="-//Hibernate/Hibernate Configuration DTD 3.0//EN" uri="file:/C:/Users/PARUL/eclipse/jee-2023-032/eclipse/../../../.p2/pool/plugins/org.hibernate.eclipse.mapper_5.4.20.v20230103-1002/dtd/hibernate-configuration-3.0.dtd" webURL="http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"/>
+  <public publicId="-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" uri="file:/C:/Users/PARUL/eclipse/jee-2023-032/eclipse/../../../.p2/pool/plugins/org.hibernate.eclipse.mapper_5.4.20.v20230103-1002/dtd/hibernate-reverse-engineering-3.0.dtd"/>
+  <public publicId="-//Red Hat, Inc.//DTD Meta 1.0//EN" uri="file:/C:/Users/PARUL/.p2/pool/plugins/org.jboss.tools.common.model_3.17.600.v20230125-1403/schema/meta.dtd"/>
 </catalog>

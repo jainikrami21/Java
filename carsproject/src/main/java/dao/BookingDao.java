@@ -3,6 +3,7 @@ package dao;
 import connection.DBConnection;
 
 import model.BookService;
+import model.ServiceMan;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -201,6 +202,28 @@ public class BookingDao {
 		return list;
 	}
 	
+	 public static List<BookService> getAllBookService(){
+	    	List<BookService> list = new ArrayList<BookService>();
+	    	try {
+	    		Connection conn = DBConnection.createConnection();
+				String sql="select * from book_services";
+				PreparedStatement pst = conn.prepareStatement(sql);
+				ResultSet rs = pst.executeQuery();
+				while(rs.next()) {
+					BookService s1 = new BookService();
+					s1.setBid(rs.getInt("bid"));
+					s1.setCid(rs.getInt("cid"));
+					s1.setSid(rs.getInt("service_id"));
+					s1.setServiceman_id(rs.getInt("serviceman_id"));
+					s1.setBooking_status(rs.getString("service_status"));
+					s1.setPayment_status(rs.getString("payment_status"));
+					list.add(s1);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+	    	return list;
+	    }
 	
 	
 	

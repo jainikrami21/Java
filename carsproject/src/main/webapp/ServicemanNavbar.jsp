@@ -65,7 +65,7 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Booked Services</a>
                                 <div class="dropdown-menu ">
                                     <a href="serviceman-pending-service.jsp" class="dropdown-item">Pending Service</a>
-                                    <a href="serviceman-completed-service.jsp" class="dropdown-item">Completed Service</a>
+                                    <a href="serviceman-complete-service.jsp" class="dropdown-item">Completed Service</a>
                                     <a href="serviceman-rejected-service.jsp" class="dropdown-item">Rejected Service</a>
                                 </div>
                             </div>

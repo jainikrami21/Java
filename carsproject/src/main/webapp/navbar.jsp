@@ -60,6 +60,7 @@
                                 <div class="dropdown-menu ">
                                     <a href="serviceman-register.jsp" class="dropdown-item">As ServiceMan</a>
                                     <a href="customer-register.jsp" class="dropdown-item">As Customer</a>
+                                    <a href="admin-register.jsp" class="dropdown-item">As Admin</a>
                                 </div>
                             </div>
                             <div class="nav-item dropdown">

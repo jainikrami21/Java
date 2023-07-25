@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Admin-Login - AutoWash - Car Wash Website Template</title>
+        <title>Admin-Login- AutoWash - Car Wash Website Template</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
@@ -108,11 +108,31 @@
                     <p>//Admin Login//</p>
                     <h2>Admin Login</h2>
                 </div>
+                
+                <% String msg = (String)request.getAttribute("msg"); %>
+            		<%if(msg!=null){ %>
+            			<div class="section-header text-center">
+                    		<h4><%out.print(msg);%></h4>
+                		</div>
+            		<%} %>
+            		
+            		<% String msg1 = (String)request.getAttribute("msg1"); %>
+            		<%if(msg1!=null){ %>
+            			<div class="section-header text-center">
+                    		<h4><%out.print(msg1);%></h4>
+                		</div>
+            		<%} %>
+            		<% String msg2 = (String)request.getAttribute("msg2"); %>
+            		<%if(msg2!=null){ %>
+            			<div class="section-header text-center">
+                    		<h4><%out.print(msg2);%></h4>
+                		</div>
+            		<%} %>
             
                     <div class="col-md-7">
                         <div class="contact-form">
                             <div id="success"></div>
-                            <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <form action="AdminController" method="post">
                                
                                 <div class="control-group">
                                     <label for="email">Your Email</label>
@@ -125,14 +145,15 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div>
-                                    <button class="btn btn-custom" type="submit" >Login</button>
+                                    <button class="btn btn-custom" type="submit" name="action" value="login" >Login</button>
                                 </div>
                             </form>
                         </div>
+                        <h4><a href="admin-forgot-password.jsp">Forgot Password ?</a></h4>
                     </div>
                 </div>
             </div>
-        </div>
+       
         <!-- Login End -->
 
 

@@ -2,12 +2,14 @@ package dao;
 
 import java.sql.Connection;
 
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import connection.DBConnection;
 import model.ServiceMan;
+
 
 public class ServicemanDao  {
 	
@@ -156,4 +158,86 @@ public class ServicemanDao  {
 		}
 		return s1;
 	}
-}
+    public static List<ServiceMan> getAllServiceMan(){
+    	List<ServiceMan> list = new ArrayList<ServiceMan>();
+    	try {
+    		Connection conn = DBConnection.createConnection();
+			String sql="select * from serviceman";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				ServiceMan s1 = new ServiceMan();
+				s1.setId(rs.getInt("id"));
+				s1.setName(rs.getString("name"));
+				s1.setContact(rs.getLong("contact"));
+				s1.setAddress(rs.getString("address"));
+				s1.setEmail(rs.getString("email"));
+				s1.setPassword(rs.getString("password"));
+				list.add(s1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    	return list;
+    }
+    
+    public static ServiceMan getSingleServiceManByid(int id){
+		ServiceMan s = null;
+		
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from serviceman where id=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			ResultSet sr = pst.executeQuery();
+			if(sr.next()) {
+				 s = new ServiceMan();
+				s.setId(sr.getInt("id"));
+				s.setName(sr.getString("name"));
+				s.setContact(sr.getLong("contact"));
+				s.setAddress(sr.getString("address"));
+				s.setEmail(sr.getString("email"));
+				s.setPassword(sr.getString("password"));
+			
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return s;
+	}
+    
+    public static void updateServiceManList(ServiceMan s){
+    	try {
+    		Connection conn = DBConnection.createConnection();
+			String sql="update serviceman set name=?,contact=?,address=?,email=? where id=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, s.getName());
+			pst.setLong(2, s.getContact());
+			pst.setString(3, s.getAddress());
+			pst.setString(4, s.getEmail());
+			pst.setInt(5, s.getId());
+			pst.executeUpdate();
+			System.out.println("Admin ServiceMan List Updated");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    	
+    }
+    public static void deleteServiceMan(int id) {
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql= "delete from serviceman where id=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			pst.executeUpdate();
+			System.out.println("Admin ServiceMan List deleted");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+    
+	
+	}
+	
+	

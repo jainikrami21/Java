@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Serviceman_Services;
 import dao.ServiceDao;
-import dao.ServicemanDao;
+
 
 /**
  * Servlet implementation class ServiceController
@@ -63,6 +63,19 @@ public class ServiceController extends HttpServlet {
 			ServiceDao.updateService(s);
 			response.sendRedirect("serviceman-manage-service.jsp");
 		}
+		else if (action.equalsIgnoreCase("edit")) {
+			Serviceman_Services s = new Serviceman_Services();
+			s.setSid(Integer.parseInt(request.getParameter("sid")));
+			s.setStype(request.getParameter("stype"));
+			s.setCar_model(request.getParameter("cmodel"));
+			s.setSprice(Integer.parseInt(request.getParameter("sprice")));
+			s.setDuration(request.getParameter("duration"));
+			ServiceDao.updateServiceman_Services(s);
+			response.sendRedirect("admin-services-list.jsp");
+			
+		}
 	}
+
+
 
 }

@@ -3,5 +3,6 @@
   <module moduleId="org.eclipse.jst.jee.server:Formwebpage" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:CarsWebApp" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:carsproject" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:e-commerce" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:aedvance" serverId="Tomcat v9.0 Server at localhost"/>
 </modules>

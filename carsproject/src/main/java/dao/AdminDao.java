@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 
 import connection.DBConnection;
 import model.Admin;
-import model.Customer;
 
 
 public class AdminDao {

@@ -16,9 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.CustomerDao;
-import dao.ServicemanDao;
 import model.Customer;
-import model.ServiceMan;
 import service.services;
 /**
  * Servlet implementation class CustomerController

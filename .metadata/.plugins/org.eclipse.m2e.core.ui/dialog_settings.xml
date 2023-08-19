@@ -2,6 +2,9 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\PARUL\eclipse-workspace\Servers"/>
+			<item value="C:\Users\PARUL\eclipse-workspace\SpringORM"/>
+			<item value="C:\Users\PARUL\eclipse-workspace\e-commerce\src\main\webapp\index.jsp"/>
 			<item value="C:\Users\PARUL\eclipse-workspace\carsproject\src\main\java\dao\ServicemanDao.java"/>
 			<item value="C:\Users\PARUL\eclipse-workspace\aedvance"/>
 		</list>
@@ -27,12 +30,24 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.mvc"/>
+			<item value="mvc"/>
+			<item value="orm"/>
+			<item value="com.core"/>
 			<item value="com.hibernate"/>
 		</list>
 		<list key="groupId">
+			<item value="com.mvc"/>
+			<item value="mvc"/>
+			<item value=" com.mvc"/>
+			<item value="orm"/>
 			<item value="com.hibernate"/>
 		</list>
 		<list key="artifactId">
+			<item value="SpringMVC"/>
+			<item value="springmvc"/>
+			<item value="SpringORM"/>
+			<item value="SpringCore"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -48,12 +63,10 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="com.hibernate"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="hibernatecore"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

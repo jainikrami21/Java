@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	
+	<bean class="collectionType.User" name="u1">
+		<property name="id" value="1"/>
+		<property name="name" value="lalit"/>
+		<property name="contact" value="987654321"/>
+		<property name="address">
+			<list>
+				<value>Ahmedabad</value>
+				<value>Delhi</value>
+				<value>Nagpur</value>
+			</list>
+		</property>
+		
+		<property name="sets">
+			
+			<set>
+				
+				<value>Jainik</value>
+				<value>Nirav</value>
+				<value>Lalit</value>
+			</set>
+			
+		</property>
+		
+		<property name="maps">
+			<map>
+				<entry key="1" value="Jainik" />
+				<entry key="2" value="Nirav" />
+				<entry key="3" value="Lalit" />
+
+			</map>
+		</property>
+	</bean>
+	
+</beans>

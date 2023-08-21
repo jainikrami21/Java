@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class MyController {
@@ -41,18 +43,44 @@ public class MyController {
 	@RequestMapping("/contact")
 	public String contactPage() {
 		return "contact";
-	}
+	}	
+	
+	@RequestMapping("/home")
+		public String home(Model m) {
+			List<User> list = this.dao.getAllUsers();
+			m.addAttribute("list", list);
+			return "home";
+			
+		}
+	
 	
 	@RequestMapping("/register")
-	public ModelAndView getRequest(@ModelAttribute User u) {
+	public String getRequest(@ModelAttribute User u,Model m) {
 		this.dao.insertUpdateUser(u);
-		ModelAndView m = new ModelAndView();
 		List<User> list = this.dao.getAllUsers();
-		m.addObject("list", list);
-		m.setViewName("home");
+		m.addAttribute("list", list);
+		return "home";
+		
+	}
+	
+	@RequestMapping(value="/update/{id}")
+	public ModelAndView update(@PathVariable("id") int id) {
+		User u = this.dao.getDataById(id);
+		ModelAndView m = new ModelAndView();
+		m.addObject("user", u);
+		m.setViewName("update");
 		return m;
 		
-		
+	}
+	
+	@RequestMapping(value="/delete/{id}")
+	public RedirectView delete(@PathVariable()int id,Model m,HttpServletRequest request){
+		this.dao.deleteUser(id);
+		List<User> list = this.dao.getAllUsers();
+		m.addAttribute("list", list);
+		RedirectView r = new RedirectView();
+		r.setUrl(request.getContextPath()+"/home");
+		return r;
 		
 	}
 	

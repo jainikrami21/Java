@@ -1,7 +1,7 @@
 <%@page import="java.util.List"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
-<
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,40 +16,47 @@
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
 
-<title>Register Form</title>
+<title>Update Form</title>
 </head>
 <body>
 	<div class="container">
-		<h1 class="text-center">User Form</h1>
-		<form action="register" method="get">
+		<h1 class="text-center">Update Form</h1>
+		<form action="${pageContext.request.contextPath}/register" method="get">
+			<div class="mb-3">
+				<label for="exampleInputEmail1" class="form-label">Id</label> <input
+					type="text" name="id" class="form-control" value="${user.id }"
+					id="exampleInputEmail1" aria-describedby="emailHelp">
+			</div>
+			
 			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Name</label> <input
-					type="text" name="name" class="form-control"
+					type="text" name="name" class="form-control" value="${user.name }"
 					id="exampleInputEmail1" aria-describedby="emailHelp">
 			</div>
 			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Contact</label> <input
-					type="text" name="contact" class="form-control"
+					type="text" name="contact" class="form-control" value="${user.contact }"
 					id="exampleInputEmail1" aria-describedby="emailHelp">
 			</div>
 			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Address</label> <input
-					type="text" name="address" class="form-control"
+					type="text" name="address" class="form-control" value="${user.address }"
 					id="exampleInputEmail1" aria-describedby="emailHelp">
 			</div>
 			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Email
 					address</label> <input type="email" name="email" class="form-control"
+					value="${user.email }"
 					id="exampleInputEmail1" aria-describedby="emailHelp">
 			</div>
 			<div class="mb-3">
 				<label for="exampleInputPassword1" class="form-label">Password</label>
-				<input type="password" name="password" class="form-control"
+				<input type="password" name="password" class="form-control" value="${user.password}"
 					id="exampleInputPassword1">
 			</div>
 			<div class="text-center">
-				<button type="submit" name="action" value="register"
-					class="btn btn-primary">Submit</button>
+				<button type="submit" name="action" value="update"
+					class="btn btn-primary">Update</button>
 			</div>
 		</form>
 		<div class="text-center">

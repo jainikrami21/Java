@@ -38,6 +38,8 @@
     
     <body>
     
+    
+    
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
         <div class="jumper">
@@ -88,10 +90,9 @@
                                 <ul>
                                     <li><a href="user-login.jsp">As User</a></li>
                                     <li><a href="seller-login.jsp">As Seller</a></li>
+                                    <li><a href="admin-login.jsp">As Admin</a></li>
                                 </ul>
                             </li>
-                            <li class="scroll-to-section"><a href="cart.jsp">Cart</a></li>
-                            
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>

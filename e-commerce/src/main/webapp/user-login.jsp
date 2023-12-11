@@ -10,7 +10,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	content="width=device-width, initial-scale=01, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
 <link
@@ -68,6 +68,9 @@
 						</div>
 					<%} %>
 					
+					
+					
+					
 					<div class="card-body">
 						<form id="subscribe" name="sentMessage" novalidate="novalidate" action="UserController" method="post">
 							<div class="form-group">
@@ -87,6 +90,7 @@
 							<div class="text-center">
 								<button type="submit" id="sendMessageButton" name="action" value="login" class="main-dark-button">Login</button>
 							</div>
+							<h4><a href="user-forgot-password.jsp">Forgot Password ?</a></h4>
 						</form>
 					</div>
 				</div>

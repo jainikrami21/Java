@@ -1,12 +1,13 @@
-
-
-
+<%@page import="Dao.WishListDao"%>
+<%@page import="Model.WishList"%>
+<%@page import="Dao.ProductDao"%>
+<%@page import="Model.Product"%>
+<%@page import="java.util.List"%>
 <%@page import="Model.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-    
-
+ 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,13 +91,17 @@
                                 <a href="javascript:;">Features</a>
                                 <ul>
                                     <li><a href="user-cart.jsp">Cart</a></li>
-                                    <li><a href="order.jsp">Orders</a></li>
+                                    
+                                    <%List<WishList> list1  = WishListDao.getWishListByCusId(s.getId()); %>
+                                    <li><a href="user-wishlist.jsp">WishList(<%=list1.size() %>)</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
                                 <a href="#"><%=s.getName()%></a>
                                 <ul>
-		                            <li class="scroll-to-section"><a href="logout.jsp">Logout</a></li>
+                                	<li><a href="user-profile.jsp">Profile</a></li>
+									<li><a href="user-change-password.jsp">Change Password</a></li>
+		                            <li class="scroll-to-section"><a href="user-logout.jsp">Logout</a></li>
                                 </ul>
                             </li>
                         </ul>      

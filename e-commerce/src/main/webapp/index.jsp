@@ -1,4 +1,4 @@
-<%@page import="Model.User"%>
+ <%@page import="Model.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     

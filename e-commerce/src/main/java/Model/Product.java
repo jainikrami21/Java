@@ -2,9 +2,8 @@ package Model;
 
 public class Product {
 	
-	private int pid,sid;
-	private String image,pname,pcategory;
-	private double pprice;
+	private int pid,sid,pprice;
+	private String image,pname,pcategory,pdesc;
 	public int getPid() {
 		return pid;
 	}
@@ -16,6 +15,12 @@ public class Product {
 	}
 	public void setSid(int sid) {
 		this.sid = sid;
+	}
+	public int getPprice() {
+		return pprice;
+	}
+	public void setPprice(int pprice) {
+		this.pprice = pprice;
 	}
 	public String getImage() {
 		return image;
@@ -35,17 +40,22 @@ public class Product {
 	public void setPcategory(String pcategory) {
 		this.pcategory = pcategory;
 	}
-	public double getPprice() {
-		return pprice;
+	public String getPdesc() {
+		return pdesc;
 	}
-	public void setPprice(double pprice) {
-		this.pprice = pprice;
+	public void setPdesc(String pdesc) {
+		this.pdesc = pdesc;
 	}
 	@Override
 	public String toString() {
-		return "Product [pid=" + pid + ", sid=" + sid + ", image=" + image + ", pname=" + pname + ", pcategory="
-				+ pcategory + ", pprice=" + pprice + "]";
+		return "Product [pid=" + pid + ", sid=" + sid + ", pprice=" + pprice + ", image=" + image + ", pname=" + pname
+				+ ", pcategory=" + pcategory + ", pdesc=" + pdesc + "]";
 	}
+	
+	
+	
+	
+	
 	
 	
 	

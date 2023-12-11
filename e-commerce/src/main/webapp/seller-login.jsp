@@ -68,22 +68,27 @@
 						</div>
 					<%} %>
 					
+					
 					<div class="card-body">
-						<form id="subscribe" action="SellerController" method="post">
+						<form id="subscribe" name="sentMessage" novalidate="novalidate" action="SellerController" method="post">
 							<div class="form-group">
-								<label>Email Address</label> <input name="email"
-									type="email" class="form-control" id="name"
-									placeholder="Your Email Address" required>
+								<label>Email Address</label> 
+								<input name="email"
+									type="email" class="form-control" id="email"
+									placeholder="Your Email" required="required"
+								data-validation-required-message="Please enter a email">
 							</div>
 							<div class="form-group">
 								<label>Password</label> <input name="password"
-									type="password" class="form-control" id="name"
-									placeholder="********" required>
+									type="password" class="form-control" id="subject"
+									placeholder="********" required="required"
+									data-validation-required-message="please enter a subject">
 							</div>
 							<div class="text-center">
-								<button type="submit" id="form-submit" name="action" value="login" class="main-dark-button">Login</button>
+								<button type="submit" id="sendMessageButton" name="action" value="login" class="main-dark-button">Login</button>
 							</div>
 						</form>
+						<a href="seller-forgot-password.jsp">Forgot  Password ?</a>
 					</div>
 				</div>
 			</div>

@@ -1,3 +1,8 @@
+<%@page import="Dao.WishListDao"%>
+<%@page import="Dao.ProductDao"%>
+<%@page import="Model.Product"%>
+<%@page import="java.util.List"%>
+<%@page import="Model.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -31,7 +36,52 @@
     
     <body>
     
-     <%@include file="header.jsp" %>
+     <%@include file="single-header.jsp" %>
+    
+   
+   <div class="left-ads-display col-lg-8">
+		<div class="row">
+			<%
+			int id = Integer.parseInt(request.getParameter("id"));
+			%>
+			<%
+			Product p = ProductDao.getProductByPid(id);
+			%>
+			<div class="desc1-left col-md-6">
+				<img src="image/<%=p.getImage()%>" class="img-fluid" alt="">
+			</div>
+			<div class="desc1-right col-md-6 pl-lg-4">
+				<h3><%=p.getPname()%></h3>
+				<h5>
+					Rs.
+					<%=p.getPprice()%>
+				</h5>
+				<div class="available mt-3">
+					<form action="CartController" method="get" class="w3layouts-newsletter">
+						<input type="hidden" name="pid" value="<%=p.getPid()%>">
+						<input type="hidden" name="cusid" value="<%=s.getId()%>">
+						<button class="btn1" name="action" value="addtocart">Add to Cart</button>
+					</form>
+					<%boolean flag = WishListDao.cheProductExist(s.getId(), p.getPid()); %>
+					<%if(flag == false){ %>
+					<form action="WishListController" method="post" class="w3layouts-newsletter">
+						<input type="hidden" name="pid" value="<%=p.getPid()%>">
+						<input type="hidden" name="cusid" value="<%=s.getId()%>">
+						<button name="action" value="addtowishlist" class="btn1">Add to WishList</button>
+
+					</form>
+					<%} %>
+					<span><a href="#">login to save in wishlist </a></span>
+					<p>Lorem Ipsum has been the industry's standard since the
+						1500s. Praesent ullamcorper dui turpis..</p>
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+    
+    
    
     <!-- ***** Main Banner Area Start ***** -->
     <div class="page-heading" id="top">

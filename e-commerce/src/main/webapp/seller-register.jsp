@@ -1,4 +1,5 @@
 
+<%@page import="Model.Seller"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	
@@ -44,7 +45,9 @@
 <body>
 
 	<%@include file="header.jsp"%>
-
+	
+	
+	
 
 	<!-- ***** Register Area Starts ***** -->
 
@@ -57,34 +60,51 @@
 					
 					
 					<div class="card-body">
+						<%String msg = (String)request.getAttribute("msg"); %>
+							<%if(msg!=null){ %>
+							<h3><%out.print(msg); %></h3>
+						<%} %>
 						<form id="subscribe" action="SellerController" method="post">
 							<div class="form-group">
-								<label>Seller Name</label> <input name="name"
+								<label>Seller Name</label>
+								 <input name="name"
 									type="text" class="form-control" id="name"
-									placeholder="SellerName" required>
+									placeholder="Your Name" required="required"
+								data-validation-required-message="Please enter a name">
 							</div>
+							
 							<div class="form-group">
 								<label>Contact No</label><br>
 								<Select><option>+91</option><option>+92</option><option>+93</option></Select><br><br>
 								<input name="contact"
-									type="password" class="form-control" id="name"
-									placeholder="9876******" required>
+									type="text" class="form-control" id="subject"
+									placeholder="9876******" required="required"
+								data-validation-required-message="Please enter a subject">
 							</div>
+							
 							<div class="form-group">
 								<label>Your Address</label> <input name="address"
-									type="password" class="form-control" id="name"
-									placeholder="Your Address" required>
+									type="text" class="form-control" id="subject"
+									placeholder="Your Address" required="required"
+								data-validation-required-message="Please enter a subject">
 							</div>
+							
 							<div class="form-group">
-								<label>Your Email</label> <input name="email"
-									type="email" class="form-control" id="name"
-									placeholder="Your Email Address" required>
+								<label>Your Email</label> 
+								<input name="email"
+									type="email" class="form-control" id="email"
+									placeholder="Your Email" required="required"
+								data-validation-required-message="Please enter your email">
 							</div>
+							
 							<div class="form-group">
-								<label>Password</label> <input name="password"
-									type="password" class="form-control" id="name"
-									placeholder="********" required>
+								<label>Password</label> 
+								<input name="password"
+									type="password" class="form-control" id="subject"
+									placeholder="********" required="required"
+									data-validation-required-message="please enter a subject">
 							</div>
+							
 							<div class="text-center">
 								<button type="submit" id="form-submit" name="action" value="register" class="main-dark-button">Register</button>
 							</div>
